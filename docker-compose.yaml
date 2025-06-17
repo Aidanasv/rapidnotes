@@ -9,4 +9,4 @@ services:
     build: ./src/
     container_name: backend-app
     ports: 
-      - "8080:8080"
+      - "8080:80"
