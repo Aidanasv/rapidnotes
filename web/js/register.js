@@ -1,6 +1,6 @@
 import User from './user.js'
 import { notifyOK, notifyKO } from './utils/notificationsUtils.js';
-
+const user = new User();
 window.addEventListener('DOMContentLoaded', (event) => {
 
     document.getElementById("menu-toggle").addEventListener("click", function() {
@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
  
 
      event.preventDefault();
-     User.addNewUser(inputName, inputEmail, inputPassword)
+     user.addNewUser(inputName, inputEmail, inputPassword)
      notifyOK("Usuario registrado correctamente");
      console.log(inputEmail, inputPassword, inputName)
        

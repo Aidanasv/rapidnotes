@@ -1,7 +1,9 @@
 class Note {
     constructor() {
-        this.baseUrl =
-            `${window.location.protocol}//${window.location.hostname}:8080/Note`;
+        this.baseUrl = `http://a9319b08eb2e146eaa84b386872f12d0-602895787.us-east-1.elb.amazonaws.com:8080/Note`;
+            
+           
+            
     }
 
     async getNoteById(noteid, callback) {

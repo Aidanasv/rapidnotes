@@ -1,7 +1,8 @@
 class User {
     constructor() {
-        this.baseUrl =
-            `${window.location.protocol}//${window.location.hostname}:8080`;
+        this.baseUrl = `http://a9319b08eb2e146eaa84b386872f12d0-602895787.us-east-1.elb.amazonaws.com:8080`;
+            
+
     }
 
     async getUserById(id) {
@@ -13,9 +14,8 @@ class User {
             .catch((error) => console.log(error));
     }
 
-    static addNewUser(name, email, password) {
-        fetch(
-            `${window.location.protocol}//${window.location.hostname}:8080/Auth/register`,
+    async addNewUser(name, email, password) {
+        fetch(`${this.baseUrl}/Auth/register`,
             {
                 method: "POST",
                 headers: {

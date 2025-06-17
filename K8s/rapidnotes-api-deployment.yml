@@ -6,7 +6,7 @@ metadata:
     app: rapidnotes-api
 spec:
   ports:
-    - port: 80
+    - port: 8080
   selector:
     app: rapidnotes-api
     tier: backend
@@ -33,6 +33,6 @@ spec:
     spec:
       containers:
       - name: rapidnotes-api
-        image: a27818/rapidnotes:api-v1
+        image: a27818/rapidnotes:api-v7
         ports:
-        - containerPort: 80
+        - containerPort: 8080
