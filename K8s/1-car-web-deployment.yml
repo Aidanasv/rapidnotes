@@ -1,38 +1,38 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: car-web-svc
+  name: rapidnotes-web-svc
   labels:
-    app: car-web
+    app: rapidnotes-web
 spec:
   ports:
     - port: 80
   selector:
-    app: car-web
+    app: rapidnotes-web
     tier: frontend
   type: LoadBalancer
 ---
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: car-web-deploy
+  name: rapidnotes-web-deploy
   labels:
-    app: car-web
+    app: rapidnotes-web
 spec:
   selector:
     matchLabels:
-      app: car-web
+      app: rapidnotes-web
       tier: frontend
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: car-web
+        app: rapidnotes-web
         tier: frontend
     spec:
       containers:
-      - name: car-web
-        image: santospardos/sanvalero:car-web2
+      - name: rapidnotes-web
+        image: a27818/rapidnotes:web-v1
         ports:
         - containerPort: 80
