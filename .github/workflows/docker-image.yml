@@ -31,7 +31,7 @@ jobs:
       id: docker_meta
       uses: docker/metadata-action@v5
       with:
-        images: a27818/rapidnotes-web-v3
+        images: a27818/rapidnotes
         flavor: |
           latest=false
         tags: |
