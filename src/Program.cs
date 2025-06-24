@@ -42,4 +42,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.MapGet("/", () => Results.Ok("Welcome to the API"));
+
 app.Run();
